@@ -20,11 +20,15 @@ function TodoList(props) {
     }
   };
   return (
-    <div>
-      <button onClick={() => setHashTagSelected(undefined)}>
+    <div className="todoList-container">
+      <div className="todoList-wrapper">{renderTodoList()}</div>
+
+      <button
+        className="show-all-todos"
+        onClick={() => setHashTagSelected(undefined)}
+      >
         Show All Todos
       </button>
-      {renderTodoList()}
     </div>
   );
 }

@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  letter-spacing: 1px;
+}
+body {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #389189;
+}
+.App h1 {
+  margin-left: 75px;
+}
+.container {
+  margin: 30px auto;
+  max-width: 400px;
+}
+.todoList-container {
+  display: flex;
+  flex-direction: column;
+}
+.todoList-wrapper {
+  margin-bottom: 20px;
+}
+.task {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #333;
+  /* display: flex;
+  justify-content: space-between; */
+  padding: 0 10px;
+  margin: 10px 0;
+  width: 150%;
+  line-height: 2em;
+}
+.hashtag {
+  color: coral;
+}
+.hashtag:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.show-all-todos {
+  cursor: pointer;
+  background-color: #61cac1;
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  margin-left: 75px;
+  padding: 10px;
+  width: 80%;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+}
+.todo-input {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 150%;
+}
+
+.add-task {
+  cursor: pointer;
+  background-color: #61cac1;
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 150%;
+}

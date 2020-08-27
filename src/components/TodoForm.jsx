@@ -25,7 +25,7 @@ function TodoForm(props) {
         name="text"
         className="todo-input"
       />
-      <button className="todo-button">Add Task</button>
+      <button className="add-task">Add Task</button>
     </form>
   );
 }

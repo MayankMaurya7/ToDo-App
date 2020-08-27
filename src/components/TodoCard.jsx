@@ -12,8 +12,8 @@ function TodoCard(props) {
       if (word[0] === "#") {
         return (
           <span
+            className="hashtag"
             key={i}
-            style={{ color: "red" }}
             onClick={() => handleHashTagClicked(word)}
           >
             {word}
@@ -23,7 +23,7 @@ function TodoCard(props) {
         return word;
       }
     });
-    return wordsArrayWithHighlightedHashtag;
+    return <div className="task">{wordsArrayWithHighlightedHashtag}</div>;
   };
   return (
     <div>

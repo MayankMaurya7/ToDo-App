@@ -26,9 +26,9 @@ function TodoPage() {
   };
 
   return (
-    <div>
-      <TodoForm addTodoToTodoList={addTodoToTodoList} />
+    <div className="container">
       <TodoList todoList={todoList} />
+      <TodoForm addTodoToTodoList={addTodoToTodoList} />
     </div>
   );
 }
