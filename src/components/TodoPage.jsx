@@ -24,11 +24,43 @@ function TodoPage() {
   const addTodoToTodoList = (todo) => {
     setTodoList([todo, ...todoList]);
   };
+  const removeTodoFromTodoList = (id) => {
+    const updatedTodoList = todoList.filter((todoList) => todoList.id !== id);
+    setTodoList(updatedTodoList);
+    // debugger;
+    console.log(updatedTodoList);
+  };
+
+  const completeTask = (completedTask) => {
+    completedTask.isComplete = true;
+
+    const updatedTodoList = todoList.filter(
+      (todo) => todo.id !== completedTask.id
+    );
+
+    const completedTasks = updatedTodoList.filter((todo) => todo.isComplete);
+    const incompleteTasks = updatedTodoList.filter((todo) => !todo.isComplete);
+
+    console.log(completedTask);
+
+    setTodoList([...incompleteTasks, completedTask, ...completedTasks]);
+  };
+
+  const reset = () => {
+    setTodoList([]);
+  };
 
   return (
     <div className="container">
-      <TodoList todoList={todoList} />
       <TodoForm addTodoToTodoList={addTodoToTodoList} />
+      <button className="reset" onClick={reset}>
+        Reset
+      </button>
+      <TodoList
+        todoList={todoList}
+        removeTodoFromTodoList={removeTodoFromTodoList}
+        completeTask={completeTask}
+      />
     </div>
   );
 }

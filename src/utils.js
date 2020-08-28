@@ -4,11 +4,24 @@ export const extractHashTagsFromString = (string) => {
   return hashTags;
 };
 
-export const extractTodosContainingHashtags = (hashTag) => {
+export const extractTodosContainingHashtags = (selectedHashTags) => {
   const todoListFromLS = JSON.parse(localStorage.getItem("todoList"));
-  //   console.log(todoListFromLS);
-  const listWithSameHashtag = todoListFromLS.filter((todo) =>
-    todo.hashTags.includes(hashTag)
-  );
-  return listWithSameHashtag;
+
+  let filteredList = [];
+
+  // A flat to make sure that the filter runs only once on the todoListFromLS list
+  let hasFilteredOnce = false;
+
+  while (selectedHashTags.length != 0) {
+    const hashTag = selectedHashTags.shift();
+    let list;
+    if (hasFilteredOnce === false) {
+      hasFilteredOnce = true;
+      list = todoListFromLS;
+    } else {
+      list = filteredList;
+    }
+    filteredList = list.filter((todo) => todo.hashTags.includes(hashTag));
+  }
+  return filteredList;
 };
