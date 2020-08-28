@@ -9,7 +9,6 @@ export const extractTodosContainingHashtags = (selectedHashTags) => {
 
   let filteredList = [];
 
-  // A flat to make sure that the filter runs only once on the todoListFromLS list
   let hasFilteredOnce = false;
 
   while (selectedHashTags.length != 0) {

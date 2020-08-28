@@ -6,7 +6,7 @@ function TodoForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const todoObj = {
-      isComplete: false, //Boolean
+      isComplete: false,
       id: new Date().getTime(),
       todo,
       hashTags: extractHashTagsFromString(todo),
